@@ -9,21 +9,17 @@
 <body>
     <dl>
         <dt>Danh Sach Mon Hoc</dt>
-        <%for(var i =0;i<listcourses.length;i++){%>
+        <%for(var i =listcourses.length-1;i>=0;i--){%>
         <a href="/detail/<%=listcourses[i]._id %>">
-            <p>Ten mon hoc</p>
+            <h2>Ten mon hoc</h2>
             <dl>
                 <%=listcourses[i].name %>
             </dl>
-            <p>ID mon hoc</p>
+            <h2>Tac gia</h2>
             <dl>
-                <%=listcourses[i].ID %>
+                <%=listcourses[i].author %>
             </dl>
-            <p>So luong sinh vien</p>
-            <dl>
-                <%=listcourses[i].student %>
-            </dl>
-            <p>Description</p>
+            <h2>Description</h2>
             <dl>
                 <%=listcourses[i].Description %>
             </dl>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Up List Course</title>
+</head>
+
+<body>
+    <h1>UP LIST COURSE</h1>
+    <form action="/posts/course/store" method="POST" accept-charset="utf-8" enctype="multipart/form-data">
+
+        <label>Name Course</label><input type="text" name="name" placeholder="name course..." id="name">
+        <br />
+        <label>ID</label> <input type="number" name="ID" id="ID" placeholder="ID course ...">
+        <br />
+        <label>Student </label><input type="number" name="student" id="student" placeholder="Amount student attending ...">
+        <br />
+        <label>Description</label><textarea name="Description" rows="8" cols="40" placeholder="Description about course ..."></textarea>
+        <br />
+        <label>Image</label>
+        <input type="file" name="image" id="image" value="" />
+        <br />
+        <label>PDF</label>
+        <input type="file" name="pdf" id="pdf" value="" />
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+
+</html>
