@@ -3,7 +3,7 @@ const Schema   = mongoose.Schema;
 
 const ListCourseSchema = new Schema({
     name : String,
-    author : String,
+    course : String,
     Description : String,
     image : String,
     pdf : String
