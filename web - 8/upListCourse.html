@@ -25,19 +25,16 @@
     <link rel="shortcut icon" href="assets/img/favicon2.jpg" type="image/x-icon">
     <!-- Remix Icon -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
-    <!-- Box Icon -->
-    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
     <!-- Custom Stylesheet -->
-    <link rel="stylesheet" href="assets/css/style-homepage.css">
-    <link rel="stylesheet" href="assets/css/style-homepage-user.css">
+    <link rel="stylesheet" href="assets/css/style-add-subject.css">
 </head>
 
 <body>
     <header class="header" id="header">
         <nav class="nav container">
-            <a href="#" class="nav__logo">Luyện Thi Online</a>
+            <a href="index-homepage.html" class="nav__logo">Luyện Thi Online</a>
             <!-- Menu Container -->
             <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list">
@@ -50,18 +47,10 @@
                     <li class="nav__item">
                         <a href="#about2" class="nav__link">Yêu thích nhất</a>
                     </li>
-                    <% if(!loggedIn){%>
                     <li class="nav__item">
-                        <a href="#" class="nav__link" id="login__btn">Đăng nhập</a>
+                        <a href="./index-homepage.html" class="nav__link">Đăng Nhập</a>
+                        <!-- id="login__btn" -->
                     </li>
-                    <%} else {%>
-                    <li class="nav__item dropdown">
-                        <button class="nav__link btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="login__btn"><%=user.username%></button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                            <button action="/users/logout" class="dropdown-item" type="button">Đăng xuất</button>
-                        </div>
-                    </li>
-                    <%}%>
                 </ul>
 
                 <div class="nav__dark">
@@ -77,133 +66,59 @@
             </div>
         </nav>
     </header>
-    <main class="main">
-        <section class="home" id="home">
-            <img src="assets/img/study8.png" alt="" class="home__img">
-            <!-- Home Container -->
-            <div class="home__container container grid">
-
-                <div class="home__data">
-                    <span class="home__data-subtitle">Học là dễ</span>
-                    <h1 class="home__data-title">Chào mừng bạn đã đến <br> Web <b>Luyện Thi <br> Online</b></h1>
-                    <a href="index-content.html" class="button">Tìm hiểu thêm</a>
-                </div>
-
-                <div class="home__social">
-                    <a href="https://www.facebook.com/gia.minh.543908/" target="_blank" class="home__social-link">
-                        <i class="ri-facebook-box-fill"></i>
-                    </a>
-
-                    <a href="https://www.instagram.com/gia.minnn/" target="_blank" class="home__social-link">
-                        <i class="ri-instagram-fill"></i>
-                    </a>
-
-                    <a href="https://twitter.com/" target="_blank" class="home__social-link">
-                        <i class="ri-twitter-fill"></i>
-                    </a>
-
-                    <a href="https://join.slack.com/t/skycitadel/shared_invite/zt-tp4xp5t3-QnJWMY1amNDeNKp7cuiTKQ" target="_blank" class="home__social-link">
-                        <i class="ri-slack-fill"></i>
-                    </a>
-                </div>
-
-                <div class="home__info">
-                    <div>
-                        <span class="home__info-title">5 bài giảng hay nhất</span>
-                        <a href="#" class="button button--flex button--link home__info-button">
-                            Xem thêm <i class="ri-arrow-right-line"></i>
-                        </a>
+    <body2>
+        <div class="container__add">
+            <div class="title__add">Nhập Tài Liệu</div>
+            <form action="/posts/course/store" method="POST" enctype="multipart/form-data">
+                <div class="user__details">
+                    <div class="input__box">
+                        <span class="details">Tên tài liệu</span>
+                        <input type="text" placeholder="Nhập tên tài liệu" name="name" required>
                     </div>
-
-                    <div class="home__info-overlay">
-                        <img src="assets/img/homee1.jpg" alt="" class="home__info-img">
+                    <div class="input__box">
+                        <span class="details">Tác giả</span>
+                        <input type="text" name="author" placeholder="Nhập tên tác giả" required>
+                    </div>
+                    <div class="input__box">
+                        <span class="details">Miêu tả</span>
+                        <textarea name="Description" rows="8" cols="76" placeholder="Nhập miêu tả tài liệu "></textarea>
+                    </div>
+                    <div class=" box2">
+                        <span class="details">Hình</span>
+                        <input type="file" name="image" required>
+                    </div>
+                    <div class="box2">
+                        <span class="details">Đường dẫn</span>
+                        <input type="file" name="pdf" required>
                     </div>
                 </div>
-            </div>
-        </section>
-        <!-- About 1 Container -->
-        <section class="about section" id="about">
-            <div class="about__container container grid">
-                <div class="about__data">
-                    <h2 class="section__title about__title">Có thể bạn chưa biết <br> Về khóa học Online này </h2>
-                    <p class="about__description">Chúng tôi được ra đời với mục đích giúp đỡ các bạn có thể dễ dàng
-                        vượt qua kì thi THPT thông qua việc rèn luyện các dạng bài tập phổ biến đã được chúng tôi tích góp lại.
-                    </p>
-                    <a href="#" class="button">Xem đề thi</a>
+                <div class="button__add">
+                    <button type="submit">Submit</button>
                 </div>
+            </form>
+        </div>
 
-                <div class="about__img">
-                    <div class="about__img-overlay">
-                        <img src="./assets/img/about22.jpg" alt="" class="about__img-one">
-                    </div>
 
-                    <div class="about__img-overlay">
-                        <img src="./assets/img/about22.jpg" alt="" class="about__img-two">
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- About2 Container -->
-        <!-- 137 - 172 chinh sua lai de load du lieu len -->
-        <section class="about2 section" id="about2">
-            <h2 class="section__title">
-                Những bài giảng được <br> yêu thích nhất
-            </h2>
-            <div class="about2__container container swiper-container">
-                <div class="swiper-wrapper">
-                    <!-- 1 -->
-                    <%for(var i =0;i<listcourses.length;i++){%>
-                    <div class="about2__card swiper-slide">
-                        <img src="<%=listcourses[i].image%>" alt="" class="about2__img">
-                        <div class="about2__data">
-                            <h2 class="about2__title">
-                                <%=listcourses[i].name%>
-                            </h2>
-                        </div>
-                    </div>
-                    <%}%>
-                </div>
-            </div>
+    </body2>
 
-        <!-- Video Container -->
-        <section class="video section">
-            <h2 class="section__title"> Lớp học online</h2>
+    <!-- Subcribe Container -->
+    <section class="subcribe section" id="subcribe">
+        <div class="subcribe__bg">
+            <div class="subcribe__container container">
+                <h2 class="section__title subcribe__title">
+                    Đăng ký ngay
+                </h2>
+                <p class="subcribe__description">Hãy để chúng tôi cung cấp cho bạn thông tin về những khóa học mới nhất.</p>
 
-            <div class="video__container container">
-                <p class="video__description">Bạn có thể học mọi lúc mọi nơi chỉ cần có kết nối mạng.</p>
-
-                <div class="video__content">
-                    <video id="video-file">
-                        <source src="assets/video/video.mp4" type="video/mp4">
-                    </video>
-
-                    <button class="button button--flex video__button" id="video-button">
-                        <i class="ri-play-line video__button-icon" id="video-icon"></i>
+                <form action="" class="subcribe__form">
+                    <input type="text" placeholder="Nhập Gmail ở đây" class="subcribe__input">
+                    <button class="button subcribe__button">
+                        Đăng ký
                     </button>
-                </div>
+                </form>
             </div>
-        </section>
-
-        <!-- Subcribe Container -->
-        <section class="subcribe section" id="subcribe">
-            <div class="subcribe__bg">
-                <div class="subcribe__container container">
-                    <h2 class="section__title subcribe__title">
-                        Đăng ký ngay
-                    </h2>
-                    <p class="subcribe__description">Hãy để chúng tôi cung cấp cho bạn thông tin về những khóa học mới nhất.</p>
-
-                    <form action="" class="subcribe__form">
-                        <input type="email" placeholder="Nhập Gmail ở đây" class="subcribe__input">
-                        <button class="button subcribe__button">
-                            Đăng ký
-                            <span class="about2__description">92 thành viên đã xem</span>
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
     <!-- Footer Container -->
     <footer class="footer section">
@@ -274,11 +189,11 @@
                 <div class="footer__terms">
                     <a href="#" class="footer__term-link2">Terms & Agreements</a>
                     <a href="#" class="footer__term-link2">Privacy Policy</a>
+
                 </div>
             </div>
         </div>
     </footer>
-
     <!-- Log in - Sign up -->
     <div class="bg__modal">
         <div class="modal__content">
@@ -288,54 +203,55 @@
                     <div class="login__img">
                         <img src="assets/img/login3.png" alt="">
                     </div>
-                    <!-- 301-322 form login -->
+
                     <div class="login__forms">
-                        <form action="/users/login" method="POST" class="login__registre" id="login-in">
+                        <form action="" class="login__registre" id="login-in">
                             <h1 class="login__title">Đăng Nhập</h1>
 
                             <div class="login__box">
                                 <i class='bx bx-user login__icon'></i>
-                                <input type="text" placeholder="Tài khoản" class="login__input" name="username">
+                                <input type="text" placeholder="Tài khoản" class="login__input">
                             </div>
 
                             <div class="login__box">
                                 <i class='bx bx-lock-alt login__icon'></i>
-                                <input type="password" placeholder="Mật khẩu" class="login__input" name="password">
+                                <input type="password" placeholder="Mật khẩu" class="login__input">
                             </div>
 
                             <a href="#" class="login__forgot">Quên mật khẩu ?</a>
-                         <button type="submit" class="login__button"> Đăng Nhập </button>
-        
+
+                            <button href="#" class="login__button">Đăng Nhập</button>
+
                             <div>
                                 <span class="login__account">Bạn chưa có tài khoản ?</span>
                                 <span class="login__signin" id="sign-up">Đăng Ký</span>
                             </div>
                         </form>
-                        <!-- 324-352 form register -->
-    <form action="/users/register" method="POST" class="login__create none" accept-charset="utf-8"id="login-up" >
+
+                        <form action="" class="login__create none" id="login-up">
                             <h1 class="login__title">Đăng Ký</h1>
 
                             <div class="login__box">
                                 <i class='bx bx-user login__icon'></i>
-                                <input type="text" placeholder="Tài khoản" class="login__input" name="username">
+                                <input type="text" placeholder="Tài khoản" class="login__input">
                             </div>
 
                             <div class="login__box">
                                 <i class='bx bx-at login__icon'></i>
-                                <input type="email" placeholder="Gmail" class="login__input" name="email">
+                                <input type="email" placeholder="Gmail" class="login__input">
                             </div>
 
                             <div class="login__box">
                                 <i class='bx bx-lock-alt login__icon'></i>
-                                <input type="password" placeholder="Mật khẩu" class="login__input" name="password">
+                                <input type="password" placeholder="Mật khẩu" class="login__input">
                             </div>
 
                             <div class="login__box">
                                 <i class='bx bx-lock-alt login__icon'></i>
-                                <input type="password" placeholder="Nhập lại mật khẩu" class="login__input" name="repassword">
+                                <input type="password" placeholder="Nhập lại mật khẩu" class="login__input">
                             </div>
 
-        <button type="submit" class="login__button"> Đăng Ký Ngay </button>
+                            <button class="login__button">Đăng Ký Ngay</button>
 
                             <div>
                                 <span class="login__account">Bạn đã có tài khoản ?</span>
@@ -347,7 +263,6 @@
                                     <i class="ri-facebook-box-fill"></i>
                                 </a>
 
-
                                 <a href="https://www.instagram.com/gia.minnn/" target="_blank" class="login__social-icon">
                                     <i class="ri-instagram-fill"></i>
                                 </a>
@@ -356,7 +271,7 @@
                                     <i class="ri-twitter-fill"></i>
                                 </a>
 
-                                <a href="https://join.slack.com/t/skycitadel/shared_invite/zt-tp4xp5t3-QnJWMY1amNDeNKp7cuiTKQ" target="_blank" class="home__social-link">
+                                <a href="https://join.slack.com/t/skycitadel/shared_invite/zt-tp4xp5t3-QnJWMY1amNDeNKp7cuiTKQ" target="_blank" class="login__social-icon">
                                     <i class="ri-slack-fill"></i>
                                 </a>
                             </div>
@@ -366,6 +281,8 @@
             </div>
         </div>
     </div>
+
+
     <!-- Scroll up -->
     <a href="#" class="scrollup" id="scroll-up">
         <i class="ri-arrow-up-line scrollup__icon"></i>
@@ -379,7 +296,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
      -->
     <!-- Main JS -->
-    <script src="assets/js/homepage.js"></script>
+    <script src="assets/js/content-2.js"></script>
 </body>
 
 </html>

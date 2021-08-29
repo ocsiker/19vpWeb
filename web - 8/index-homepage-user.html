@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Luyện Thi Online</title>
     <!-- CDN -->
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" 
     rel="stylesheet" 
     integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" 
-    crossorigin="anonymous"> -->
+    crossorigin="anonymous">
     <!-- Font CDN -->
     <script src="https://kit.fontawesome.com/114ef145b3.js" crossorigin="anonymous"></script>
     <!-- Jquery -->
@@ -30,15 +29,13 @@
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
     <!-- Custom Stylesheet -->
-    <link rel="stylesheet" href="assets/css/style-homepage.css">
     <link rel="stylesheet" href="assets/css/style-homepage-user.css">
 </head>
-
 <body>
     <header class="header" id="header">
         <nav class="nav container">
             <a href="#" class="nav__logo">Luyện Thi Online</a>
-            <!-- Menu Container -->
+<!-- Menu Container -->
             <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list">
                     <li class="nav__item">
@@ -50,18 +47,12 @@
                     <li class="nav__item">
                         <a href="#about2" class="nav__link">Yêu thích nhất</a>
                     </li>
-                    <% if(!loggedIn){%>
-                    <li class="nav__item">
-                        <a href="#" class="nav__link" id="login__btn">Đăng nhập</a>
-                    </li>
-                    <%} else {%>
                     <li class="nav__item dropdown">
-                        <button class="nav__link btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="login__btn"><%=user.username%></button>
+                        <button class="nav__link btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="login__btn">Gia Minh</button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                            <button action="/users/logout" class="dropdown-item" type="button">Đăng xuất</button>
+                            <button class="dropdown-item" type="button">Đăng xuất</button>
                         </div>
                     </li>
-                    <%}%>
                 </ul>
 
                 <div class="nav__dark">
@@ -80,13 +71,13 @@
     <main class="main">
         <section class="home" id="home">
             <img src="assets/img/study8.png" alt="" class="home__img">
-            <!-- Home Container -->
+<!-- Home Container -->
             <div class="home__container container grid">
-
+            
                 <div class="home__data">
                     <span class="home__data-subtitle">Học là dễ</span>
                     <h1 class="home__data-title">Chào mừng bạn đã đến <br> Web <b>Luyện Thi <br> Online</b></h1>
-                    <a href="index-content.html" class="button">Tìm hiểu thêm</a>
+                    <a href="index-content-2.html" class="button">Tìm hiểu thêm</a>
                 </div>
 
                 <div class="home__social">
@@ -110,7 +101,7 @@
                 <div class="home__info">
                     <div>
                         <span class="home__info-title">5 bài giảng hay nhất</span>
-                        <a href="#" class="button button--flex button--link home__info-button">
+                        <a href="index-content-2.html" class="button button--flex button--link home__info-button">
                             Xem thêm <i class="ri-arrow-right-line"></i>
                         </a>
                     </div>
@@ -121,15 +112,15 @@
                 </div>
             </div>
         </section>
-        <!-- About 1 Container -->
+<!-- About 1 Container -->
         <section class="about section" id="about">
             <div class="about__container container grid">
                 <div class="about__data">
                     <h2 class="section__title about__title">Có thể bạn chưa biết <br> Về khóa học Online này </h2>
-                    <p class="about__description">Chúng tôi được ra đời với mục đích giúp đỡ các bạn có thể dễ dàng
-                        vượt qua kì thi THPT thông qua việc rèn luyện các dạng bài tập phổ biến đã được chúng tôi tích góp lại.
+                    <p class="about__description">Chúng tôi được ra đời với mục đích giúp đỡ các bạn có thể dễ dàng 
+                         vượt qua kì thi THPT thông qua việc rèn luyện các dạng bài tập phổ biến đã được chúng tôi tích góp lại. 
                     </p>
-                    <a href="#" class="button">Xem đề thi</a>
+                    <a href="index-content-2.html" class="button">Xem đề thi</a>
                 </div>
 
                 <div class="about__img">
@@ -143,29 +134,44 @@
                 </div>
             </div>
         </section>
-        <!-- About2 Container -->
-        <!-- 137 - 172 chinh sua lai de load du lieu len -->
-        <section class="about2 section" id="about2">
+<!-- About2 Container -->
+        <section class="about2 section" id="about2"> 
             <h2 class="section__title">
                 Những bài giảng được <br> yêu thích nhất
             </h2>
             <div class="about2__container container swiper-container">
                 <div class="swiper-wrapper">
                     <!-- 1 -->
-                    <%for(var i =0;i<listcourses.length;i++){%>
                     <div class="about2__card swiper-slide">
-                        <img src="<%=listcourses[i].image%>" alt="" class="about2__img">
+                        <img src="assets/img/about22.jpg" alt="" class="about2__img">
                         <div class="about2__data">
-                            <h2 class="about2__title">
-                                <%=listcourses[i].name%>
-                            </h2>
+                            <h2 class="about2__title">Vi tích phân</h2>
+                            <span class="about2__description">92 thành viên đã xem</span>
                         </div>
                     </div>
-                    <%}%>
+                    
+                    <!-- 2 -->
+                    <div class="about2__card swiper-slide">
+                        <img src="assets/img/about22.jpg" alt="" class="about2__img">
+                        <div class="about2__data">
+                            <h2 class="about2__title">Toán tổ hợp</h2>
+                            <span class="about2__description">52 thành viên đã xem</span>
+                        </div>
+                    </div>
+                    
+                    <!-- 3 -->
+                    <div class="about2__card swiper-slide">
+                        <img src="assets/img/about22.jpg" alt="" class="about2__img">
+                        <div class="about2__data">
+                            <h2 class="about2__title">Đại số tuyến tính</h2>
+                            <span class="about2__description">68 thành viên đã xem</span>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </section>
 
-        <!-- Video Container -->
+<!-- Video Container -->
         <section class="video section">
             <h2 class="section__title"> Lớp học online</h2>
 
@@ -184,7 +190,7 @@
             </div>
         </section>
 
-        <!-- Subcribe Container -->
+<!-- Subcribe Container -->
         <section class="subcribe section" id="subcribe">
             <div class="subcribe__bg">
                 <div class="subcribe__container container">
@@ -197,26 +203,25 @@
                         <input type="email" placeholder="Nhập Gmail ở đây" class="subcribe__input">
                         <button class="button subcribe__button">
                             Đăng ký
-                            <span class="about2__description">92 thành viên đã xem</span>
                         </button>
                     </form>
                 </div>
             </div>
         </section>
     </main>
-
-    <!-- Footer Container -->
+    
+<!-- Footer Container -->
     <footer class="footer section">
         <div class="footer__container container grid">
             <div class="footer__content grid">
                 <div class="footer__data">
                     <h3 class="footer__title">Luyện Thi Online</h3>
                     <p class="footer__description">
-                        Thầy giáo: Nguyễn Phạm Dung Minh
-                        <br>Địa chỉ: Tầng 5 Tòa nhà I. Số 227 Nguyễn Văn Cừ Phường 4 Quận 5, Hồ Chí Minh
-                        <br>Điện thoại: 0123696969
-                        <br>Email: thaygiaovippro@gmail.com
-                        <br>Chịu trách nhiệm nội dung: Phạm Minh Thông Dung
+                       Thầy giáo: Nguyễn Phạm Dung Minh 
+                       <br>Địa chỉ: Tầng 5 Tòa nhà I. Số 227 Nguyễn Văn Cừ Phường 4 Quận 5, Hồ Chí Minh
+                       <br>Điện thoại: 0123696969
+                       <br>Email: thaygiaovippro@gmail.com
+                       <br>Chịu trách nhiệm nội dung: Phạm Minh Thông Dung
                     </p>
 
                     <div>
@@ -239,17 +244,23 @@
                     <h3 class="footer__subtitle">Liên hệ quảng cáo</h3>
 
                     <p class="footer__description ">
-                    <p>Đường dây nóng: 0123999999</p>
-                    <br>
-                    <p>Email: luyenthionline@admin.com </p><br>
-                    <a href="https://www.facebook.com/gia.minh.543908/" class="button">
-                        <i class="fab fa-facebook-messenger"></i>
-                        <svg class="button__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
-                        </svg>
-                        Chat với tư vấn viên
-                    </a>
-
-                    </p>
+                        <p>Đường dây nóng: 0123999999</p>
+                        <br><p>Email: luyenthionline@admin.com </p><br>
+                        <a href="https://www.facebook.com/gia.minh.543908/" class="button">
+                            <i class="fab fa-facebook-messenger"></i>
+                            <svg
+                              class="button__icon"
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 32 32"
+                              aria-hidden="true"
+                              focusable="false"
+                              
+                            >
+                            </svg>
+                            Chat với tư vấn viên
+                        </a>
+                        
+                     </p>
                 </div>
 
                 <div class="footer__data">
@@ -279,7 +290,7 @@
         </div>
     </footer>
 
-    <!-- Log in - Sign up -->
+<!-- Log in - Sign up -->
     <div class="bg__modal">
         <div class="modal__content">
             <div class="close__btn">+</div>
@@ -288,75 +299,75 @@
                     <div class="login__img">
                         <img src="assets/img/login3.png" alt="">
                     </div>
-                    <!-- 301-322 form login -->
+    
                     <div class="login__forms">
-                        <form action="/users/login" method="POST" class="login__registre" id="login-in">
+                        <form action="" class="login__registre" id="login-in">
                             <h1 class="login__title">Đăng Nhập</h1>
-
+        
                             <div class="login__box">
                                 <i class='bx bx-user login__icon'></i>
-                                <input type="text" placeholder="Tài khoản" class="login__input" name="username">
+                                <input type="text" placeholder="Tài khoản" class="login__input">
                             </div>
-
+        
                             <div class="login__box">
                                 <i class='bx bx-lock-alt login__icon'></i>
-                                <input type="password" placeholder="Mật khẩu" class="login__input" name="password">
+                                <input type="password" placeholder="Mật khẩu" class="login__input">
                             </div>
-
+    
                             <a href="#" class="login__forgot">Quên mật khẩu ?</a>
-                         <button type="submit" class="login__button"> Đăng Nhập </button>
-        
+    
+                            <button href="#" class="login__button">Đăng Nhập</button>
+    
                             <div>
                                 <span class="login__account">Bạn chưa có tài khoản ?</span>
                                 <span class="login__signin" id="sign-up">Đăng Ký</span>
                             </div>
                         </form>
-                        <!-- 324-352 form register -->
-    <form action="/users/register" method="POST" class="login__create none" accept-charset="utf-8"id="login-up" >
+    
+                        <form action="" class="login__create none" id="login-up">
                             <h1 class="login__title">Đăng Ký</h1>
-
+        
                             <div class="login__box">
                                 <i class='bx bx-user login__icon'></i>
-                                <input type="text" placeholder="Tài khoản" class="login__input" name="username">
+                                <input type="text" placeholder="Tài khoản" class="login__input">
                             </div>
-
+        
                             <div class="login__box">
                                 <i class='bx bx-at login__icon'></i>
-                                <input type="email" placeholder="Gmail" class="login__input" name="email">
+                                <input type="email" placeholder="Gmail" class="login__input">
+                            </div>
+    
+                            <div class="login__box">
+                                <i class='bx bx-lock-alt login__icon'></i>
+                                <input type="password" placeholder="Mật khẩu" class="login__input">
                             </div>
 
                             <div class="login__box">
                                 <i class='bx bx-lock-alt login__icon'></i>
-                                <input type="password" placeholder="Mật khẩu" class="login__input" name="password">
+                                <input type="password" placeholder="Nhập lại mật khẩu" class="login__input">
                             </div>
-
-                            <div class="login__box">
-                                <i class='bx bx-lock-alt login__icon'></i>
-                                <input type="password" placeholder="Nhập lại mật khẩu" class="login__input" name="repassword">
-                            </div>
-
-        <button type="submit" class="login__button"> Đăng Ký Ngay </button>
-
+    
+                            <button class="login__button">Đăng Ký Ngay</button>
+    
                             <div>
                                 <span class="login__account">Bạn đã có tài khoản ?</span>
                                 <span class="login__signup" id="sign-in">Đăng Nhập</span>
                             </div>
-
+    
                             <div class="login__social">
                                 <a href="https://www.facebook.com/gia.minh.543908/" target="_blank" class="login__social-icon">
                                     <i class="ri-facebook-box-fill"></i>
                                 </a>
-
-
+            
                                 <a href="https://www.instagram.com/gia.minnn/" target="_blank" class="login__social-icon">
                                     <i class="ri-instagram-fill"></i>
                                 </a>
-
+            
                                 <a href="https://twitter.com/" target="_blank" class="login__social-icon">
                                     <i class="ri-twitter-fill"></i>
                                 </a>
-
-                                <a href="https://join.slack.com/t/skycitadel/shared_invite/zt-tp4xp5t3-QnJWMY1amNDeNKp7cuiTKQ" target="_blank" class="home__social-link">
+            
+                                <a href="https://join.slack.com/t/skycitadel/shared_invite/zt-tp4xp5t3-QnJWMY1amNDeNKp7cuiTKQ" target="_blank" class="login__social-icon">
                                     <i class="ri-slack-fill"></i>
                                 </a>
                             </div>
@@ -366,6 +377,7 @@
             </div>
         </div>
     </div>
+
     <!-- Scroll up -->
     <a href="#" class="scrollup" id="scroll-up">
         <i class="ri-arrow-up-line scrollup__icon"></i>
@@ -374,12 +386,11 @@
     <script src="assets/js/scrollreveal.min.js"></script>
     <!-- Swiper JS -->
     <script src="assets/js/swiper-bundle.min.js"></script>
-
+    
     <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
      -->
     <!-- Main JS -->
-    <script src="assets/js/homepage.js"></script>
+    <script src="assets/js/homepage-user.js"></script>
 </body>
-
 </html>

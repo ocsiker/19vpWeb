@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>List Dynamic</title>
+</head>
+
+<body>
+    <dl>
+        <dt>Danh Sach Mon Hoc</dt>
+        <%for(var i =listcourses.length-1;i>=0;i--){%>
+        <a href="/detail/<%=listcourses[i]._id %>">
+            <h2>Ten mon hoc</h2>
+            <dl>
+                <%=listcourses[i].name %>
+            </dl>
+            <h2>mon hoc</h2>
+            <dl>
+                <%=listcourses[i].course %>
+            </dl>
+            <h2>Description</h2>
+            <dl>
+                <%=listcourses[i].Description %>
+            </dl>
+        </a>
+    </dl>
+    <hr />
+
+    <% } %>
+
+</body>
+
+</html>
