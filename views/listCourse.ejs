@@ -28,7 +28,7 @@
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
     <!-- Custom Stylesheet -->
-    <link rel="stylesheet" href="assets/css/style-content-1.css">
+    <link rel="stylesheet" href="assets/css/style-content-1-5.css">
 </head>
 
 <body>
@@ -45,7 +45,7 @@
                         <a href="#about" class="nav__link">Giới Thiệu</a>
                     </li>
                     <li class="nav__item">
-                        <a href="#about2" class="nav__link">Bài Học</a>
+                        <a href="./index-content-1.html" class="nav__link">Bài Học</a>
                     </li>
                     <li class="nav__item">
                         <a href="./index-homepage.html" class="nav__link">Đăng Nhập</a>
@@ -73,224 +73,225 @@
 
             <%for(var i =listcourses.length-1;i>=0;i--){%>
             <a href="/detail/<%=listcourses[i]._id %>">
-                <!-- Card 1 -->
                 <article class="article__card">
                     <div class="article__image">
-                        <img src=" <%=listcourses[i].name %> " alt="" />
-
+                        <img src="<%=listcourses[i].image%>" alt="" />
                     </div>
-
                     <div class="article__content">
-                        <span class="card__category"> <%=listcourses[i].course %> </span>
+                        <span class="card__category">
+                            <%=listcourses[i].course %>
+                        </span>
 
-                        <span class="card__title"> <%=listcourses[i].name %> </span>
-                        <br>
+                        <span class="card__title"> <%=listcourses[i].name %> </span><br>
                         <span class="card__excerpt"> <%=listcourses[i].Description %> </span>
-
                     </div>
                 </article>
             </a>
+            <%}%>
+            </div>
+  </div>
 
-            <% } %>
+<!-- Subcribe Container -->
+        <section class="subcribe section" id="subcribe">
+            <div class="subcribe__bg">
+                <div class="subcribe__container container">
+                    <h2 class="section__title subcribe__title">
+                        Đăng ký ngay
+                    </h2>
+                    <p class="subcribe__description">Hãy để chúng tôi cung cấp cho bạn thông tin về những khóa học mới nhất.</p>
 
-            <br />
+                    <form action="" class="subcribe__form">
+                        <input type="text" placeholder="Nhập Gmail ở đây" class="subcribe__input">
+                        <button class="button subcribe__button">
+                            Đăng ký
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    
+<!-- Footer Container -->
+    <footer class="footer section">
+        <div class="footer__container container grid">
+            <div class="footer__content grid">
+                <div class="footer__data">
+                    <h3 class="footer__title">Luyện Thi Online</h3>
+                    <p class="footer__description">
+                       Thầy giáo: Nguyễn Phạm Dung Minh 
+                       <br>Địa chỉ: Tầng 5 Tòa nhà I. Số 227 Nguyễn Văn Cừ Phường 4 Quận 5, Hồ Chí Minh
+                       <br>Điện thoại: 0123696969
+                       <br>Email: thaygiaovippro@gmail.com
+                       <br>Chịu trách nhiệm nội dung: Phạm Minh Thông Dung
+                    </p>
 
-            <!-- Subcribe Container -->
-            <section class="subcribe section" id="subcribe">
-                <div class="subcribe__bg">
-                    <div class="subcribe__container container">
-                        <h2 class="section__title subcribe__title">
-                            Đăng ký ngay
-                        </h2>
-                        <p class="subcribe__description">Hãy để chúng tôi cung cấp cho bạn thông tin về những khóa học mới nhất.</p>
-
-                        <form action="" class="subcribe__form">
-                            <input type="text" placeholder="Nhập Gmail ở đây" class="subcribe__input">
-                            <button class="button subcribe__button">
-                                Đăng ký
-                            </button>
-                        </form>
+                    <div>
+                        <a href="https://www.facebook.com/gia.minh.543908/" target="_blank" class="footer__social">
+                            <i class="ri-facebook-fill"></i>
+                        </a>
+                        <a href="https://www.instagram.com/gia.minnn/" target="_blank" class="footer__social">
+                            <i class="ri-instagram-fill"></i>
+                        </a>
+                        <a href="https://twitter.com/" target="_blank" class="footer__social">
+                            <i class="ri-twitter-fill"></i>
+                        </a>
+                        <a href="https://join.slack.com/t/skycitadel/shared_invite/zt-tp4xp5t3-QnJWMY1amNDeNKp7cuiTKQ" target="_blank" class="footer__social">
+                            <i class="ri-slack-fill"></i>
+                        </a>
                     </div>
                 </div>
-            </section>
 
-            <!-- Footer Container -->
-            <footer class="footer section">
-                <div class="footer__container container grid">
-                    <div class="footer__content grid">
-                        <div class="footer__data">
-                            <h3 class="footer__title">Luyện Thi Online</h3>
-                            <p class="footer__description">
-                                Thầy giáo: Nguyễn Phạm Dung Minh
-                                <br>Địa chỉ: Tầng 5 Tòa nhà I. Số 227 Nguyễn Văn Cừ Phường 4 Quận 5, Hồ Chí Minh
-                                <br>Điện thoại: 0123696969
-                                <br>Email: thaygiaovippro@gmail.com
-                                <br>Chịu trách nhiệm nội dung: Phạm Minh Thông Dung
-                            </p>
+                <div class="footer__data">
+                    <h3 class="footer__subtitle">Liên hệ quảng cáo</h3>
 
-                            <div>
-                                <a href="https://www.facebook.com/gia.minh.543908/" target="_blank" class="footer__social">
-                                    <i class="ri-facebook-fill"></i>
-                                </a>
-                                <a href="https://www.instagram.com/gia.minnn/" target="_blank" class="footer__social">
-                                    <i class="ri-instagram-fill"></i>
-                                </a>
-                                <a href="https://twitter.com/" target="_blank" class="footer__social">
-                                    <i class="ri-twitter-fill"></i>
-                                </a>
-                                <a href="https://join.slack.com/t/skycitadel/shared_invite/zt-tp4xp5t3-QnJWMY1amNDeNKp7cuiTKQ" target="_blank" class="footer__social">
-                                    <i class="ri-slack-fill"></i>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="footer__data">
-                            <h3 class="footer__subtitle">Liên hệ quảng cáo</h3>
-
-                            <p class="footer__description ">
-                            <p>Đường dây nóng: 0123999999</p>
-                            <br>
-                            <p>Email: luyenthionline@admin.com </p><br>
-                            <a href="https://www.facebook.com/gia.minh.543908/" class="button">
-                                <i class="fab fa-facebook-messenger"></i>
-                                <svg class="button__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
-                                </svg>
-                                Chat với tư vấn viên
-                            </a>
-
-                            </p>
-                        </div>
-
-                        <div class="footer__data">
-                            <h3 class="footer__subtitle">Hỗ trợ người dùng</h3>
-
-                            <ul>
-                                <li class="footer__item">
-                                    <a href="" class="footer__link">Câu hỏi thường gặp</a>
-                                </li>
-                                <li class="footer__item">
-                                    <a href="" class="footer__link">Cách thức thanh toán</a>
-                                </li>
-                                <li class="footer__item">
-                                    <a href="" class="footer__link">Khiếu nại</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="footer__rights">
-                        <p class="footer__copy">Copyright &#169; TeamMTTT. All rights reserved.</p>
-                        <div class="footer__terms">
-                            <a href="#" class="footer__term-link2">Terms & Agreements</a>
-                            <a href="#" class="footer__term-link2">Privacy Policy</a>
-
-                        </div>
-                    </div>
+                    <p class="footer__description ">
+                        <p>Đường dây nóng: 0123999999</p>
+                        <br><p>Email: luyenthionline@admin.com </p><br>
+                        <a href="https://www.facebook.com/gia.minh.543908/" class="button">
+                            <i class="fab fa-facebook-messenger"></i>
+                            <svg
+                              class="button__icon"
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 32 32"
+                              aria-hidden="true"
+                              focusable="false"
+                              
+                            >
+                            </svg>
+                            Chat với tư vấn viên
+                        </a>
+                        
+                     </p>
                 </div>
-            </footer>
-            <!-- Log in - Sign up -->
-            <div class="bg__modal">
-                <div class="modal__content">
-                    <div class="close__btn">+</div>
-                    <div class="login">
-                        <div class="login__content">
-                            <div class="login__img">
-                                <img src="assets/img/login3.png" alt="">
-                            </div>
 
-                            <div class="login__forms">
-                                <form action="" class="login__registre" id="login-in">
-                                    <h1 class="login__title">Đăng Nhập</h1>
+                <div class="footer__data">
+                    <h3 class="footer__subtitle">Hỗ trợ người dùng</h3>
 
-                                    <div class="login__box">
-                                        <i class='bx bx-user login__icon'></i>
-                                        <input type="text" placeholder="Tài khoản" class="login__input">
-                                    </div>
-
-                                    <div class="login__box">
-                                        <i class='bx bx-lock-alt login__icon'></i>
-                                        <input type="password" placeholder="Mật khẩu" class="login__input">
-                                    </div>
-
-                                    <a href="#" class="login__forgot">Quên mật khẩu ?</a>
-
-                                    <button href="#" class="login__button">Đăng Nhập</button>
-
-                                    <div>
-                                        <span class="login__account">Bạn chưa có tài khoản ?</span>
-                                        <span class="login__signin" id="sign-up">Đăng Ký</span>
-                                    </div>
-                                </form>
-
-                                <form action="" class="login__create none" id="login-up">
-                                    <h1 class="login__title">Đăng Ký</h1>
-
-                                    <div class="login__box">
-                                        <i class='bx bx-user login__icon'></i>
-                                        <input type="text" placeholder="Tài khoản" class="login__input">
-                                    </div>
-
-                                    <div class="login__box">
-                                        <i class='bx bx-at login__icon'></i>
-                                        <input type="email" placeholder="Gmail" class="login__input">
-                                    </div>
-
-                                    <div class="login__box">
-                                        <i class='bx bx-lock-alt login__icon'></i>
-                                        <input type="password" placeholder="Mật khẩu" class="login__input">
-                                    </div>
-
-                                    <div class="login__box">
-                                        <i class='bx bx-lock-alt login__icon'></i>
-                                        <input type="password" placeholder="Nhập lại mật khẩu" class="login__input">
-                                    </div>
-
-                                    <button class="login__button">Đăng Ký Ngay</button>
-
-                                    <div>
-                                        <span class="login__account">Bạn đã có tài khoản ?</span>
-                                        <span class="login__signup" id="sign-in">Đăng Nhập</span>
-                                    </div>
-
-                                    <div class="login__social">
-                                        <a href="https://www.facebook.com/gia.minh.543908/" target="_blank" class="login__social-icon">
-                                            <i class="ri-facebook-box-fill"></i>
-                                        </a>
-
-                                        <a href="https://www.instagram.com/gia.minnn/" target="_blank" class="login__social-icon">
-                                            <i class="ri-instagram-fill"></i>
-                                        </a>
-
-                                        <a href="https://twitter.com/" target="_blank" class="login__social-icon">
-                                            <i class="ri-twitter-fill"></i>
-                                        </a>
-
-                                        <a href="https://join.slack.com/t/skycitadel/shared_invite/zt-tp4xp5t3-QnJWMY1amNDeNKp7cuiTKQ" target="_blank" class="login__social-icon">
-                                            <i class="ri-slack-fill"></i>
-                                        </a>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
+                    <ul>
+                        <li class="footer__item">
+                            <a href="" class="footer__link">Câu hỏi thường gặp</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="" class="footer__link">Cách thức thanh toán</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="" class="footer__link">Khiếu nại</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
 
+            <div class="footer__rights">
+                <p class="footer__copy">Copyright &#169; TeamMTTT. All rights reserved.</p>
+                <div class="footer__terms">
+                    <a href="#" class="footer__term-link2">Terms & Agreements</a>
+                    <a href="#" class="footer__term-link2">Privacy Policy</a>
 
-            <!-- Scroll up -->
-            <a href="#" class="scrollup" id="scroll-up">
-                <i class="ri-arrow-up-line scrollup__icon"></i>
-            </a>
-            <!-- Scroll Reveal -->
-            <script src="assets/js/scrollreveal.min.js"></script>
-            <!-- Swiper JS -->
-            <script src="assets/js/swiper-bundle.min.js"></script>
+                </div>
+            </div>
+        </div>
+    </footer>
+<!-- Log in - Sign up -->
+<div class="bg__modal">
+    <div class="modal__content">
+        <div class="close__btn">+</div>
+        <div class="login">
+            <div class="login__content">
+                <div class="login__img">
+                    <img src="assets/img/login3.png" alt="">
+                </div>
 
-            <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
+                <div class="login__forms">
+                    <form action="" class="login__registre" id="login-in">
+                        <h1 class="login__title">Đăng Nhập</h1>
+    
+                        <div class="login__box">
+                            <i class='bx bx-user login__icon'></i>
+                            <input type="text" placeholder="Tài khoản" class="login__input">
+                        </div>
+    
+                        <div class="login__box">
+                            <i class='bx bx-lock-alt login__icon'></i>
+                            <input type="password" placeholder="Mật khẩu" class="login__input">
+                        </div>
+
+                        <a href="#" class="login__forgot">Quên mật khẩu ?</a>
+
+                        <button href="#" class="login__button">Đăng Nhập</button>
+
+                        <div>
+                            <span class="login__account">Bạn chưa có tài khoản ?</span>
+                            <span class="login__signin" id="sign-up">Đăng Ký</span>
+                        </div>
+                    </form>
+
+                    <form action="" class="login__create none" id="login-up">
+                        <h1 class="login__title">Đăng Ký</h1>
+    
+                        <div class="login__box">
+                            <i class='bx bx-user login__icon'></i>
+                            <input type="text" placeholder="Tài khoản" class="login__input">
+                        </div>
+    
+                        <div class="login__box">
+                            <i class='bx bx-at login__icon'></i>
+                            <input type="email" placeholder="Gmail" class="login__input">
+                        </div>
+
+                        <div class="login__box">
+                            <i class='bx bx-lock-alt login__icon'></i>
+                            <input type="password" placeholder="Mật khẩu" class="login__input">
+                        </div>
+
+                        <div class="login__box">
+                            <i class='bx bx-lock-alt login__icon'></i>
+                            <input type="password" placeholder="Nhập lại mật khẩu" class="login__input">
+                        </div>
+
+                        <button class="login__button">Đăng Ký Ngay</button>
+
+                        <div>
+                            <span class="login__account">Bạn đã có tài khoản ?</span>
+                            <span class="login__signup" id="sign-in">Đăng Nhập</span>
+                        </div>
+
+                        <div class="login__social">
+                            <a href="https://www.facebook.com/gia.minh.543908/" target="_blank" class="login__social-icon">
+                                <i class="ri-facebook-box-fill"></i>
+                            </a>
+        
+                            <a href="https://www.instagram.com/gia.minnn/" target="_blank" class="login__social-icon">
+                                <i class="ri-instagram-fill"></i>
+                            </a>
+        
+                            <a href="https://twitter.com/" target="_blank" class="login__social-icon">
+                                <i class="ri-twitter-fill"></i>
+                            </a>
+        
+                            <a href="https://join.slack.com/t/skycitadel/shared_invite/zt-tp4xp5t3-QnJWMY1amNDeNKp7cuiTKQ" target="_blank" class="login__social-icon">
+                                <i class="ri-slack-fill"></i>
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <!-- Scroll up -->
+    <a href="#" class="scrollup" id="scroll-up">
+        <i class="ri-arrow-up-line scrollup__icon"></i>
+    </a>
+    <!-- Scroll Reveal -->
+    <script src="assets/js/scrollreveal.min.js"></script>
+    <!-- Swiper JS -->
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
      -->
-            <!-- Main JS -->
-            <script src="assets/js/content-2.js"></script>
+    <!-- Main JS -->
+    <script src="assets/js/content-2.js"></script>
 </body>
-
 </html>

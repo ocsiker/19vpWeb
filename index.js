@@ -7,16 +7,23 @@ const ListCourse     = require('./models/listCourse');
 const fileUpload     = require('express-fileupload');
 const ListUser       = require('./models/listUser');
 const expressSession = require('express-session');
+const Comment        = require('./models/comment');
 
 const validateMiddleware = require('./middleware/validationMiddleware');
 const redirectIfAuthenticateMiddleware =
     require('./middleware/redirectIfAuthenticatedMiddleware');
+const authMiddleware = require('./middleware/authMiddleware');
 
 // for login
 
 const bcrypt = require('bcrypt');
+const port   = 3000;
 
-mongoose.connect('mongodb://localhost/Courses', {useNewUrlParser : true});
+mongoose.connect('mongodb://localhost/Courses', {
+    useNewUrlParser : true,
+    useUnifiedTopology : true,
+    useFindAndModify : true
+});
 
 var app = express();
 
@@ -42,8 +49,13 @@ app.get('/', async (req, res) => {
 app.get('/content', (req, res) => {
     res.render('content');
 });
+
+app.get('/content-1', (req, res) => {
+    res.render('content-1');
+});
 app.get('/list-course', async (req, res) => {
     const listcourses = await ListCourse.find({});
+    console.log(req.session);
     res.render('listCourse', {listcourses});
 })
 /*
@@ -64,7 +76,7 @@ app.get('/detail/:id', detailCourseController);
 //    res.render('upListCourse');
 //}
 const upListCourseController = require('./controllers/upListCourse');
-app.get('/up-list-course', upListCourseController);
+app.get('/up-list-course', authMiddleware, upListCourseController);
 
 // creating form post course
 // app.post('/posts/course/store', async (req, res) => {
@@ -108,7 +120,17 @@ app.post('/search/result', searchResultController);
 //                          });
 //    // res.redirect('/search');
 //});
+// LIST COURSE OF MATH LITERATURE ....
+const listCourseMathController = require('./controllers/listCourseMath');
+app.get('/list-course/math', listCourseMathController);
 
+const listCourseLiteratureController =
+    require('./controllers/listCourseLiterature');
+app.get('/list-course/literature', listCourseLiteratureController);
+
+const listCourseLanguageController =
+    require('./controllers/listCourseLanguage');
+app.get('/list-course/language', listCourseLanguageController);
 // REGISTER
 //
 //
@@ -140,4 +162,38 @@ const logoutController = require('./controllers/logout');
 app.get('/users/logout', logoutController);
 
 app.use((req, res) => res.render('notfound'));
-app.listen(3000);
+//
+//
+// Thong section comment
+//.
+app.post('/api/Courses', (req, res) => {
+    const comment = new Comment({
+        username: req.body.username,
+        comment: req.body.comment
+    })
+    comment.save().then(response => {
+        res.send(response)
+    })
+
+})
+
+    app.get('/api/Courses',
+            (req, res) => {Comment.find().then(function(comments) {
+                res.send(comments)
+            })})
+
+    const server = app.listen(`${port}`);
+    let io       = require('socket.io')(server)
+
+io.on('connection', (socket) => {
+    console.log(`New connection: ${socket.id}`)
+// Recieve event
+    socket.on('comment', (data) => {
+        data.time = Date()
+        socket.broadcast.emit('comment', data)
+    })
+
+    socket.on('typing', (data) => {
+        socket.broadcast.emit('typing', data) 
+    })
+})

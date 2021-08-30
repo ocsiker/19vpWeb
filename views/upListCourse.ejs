@@ -22,13 +22,13 @@
     <!-- CDN 2-->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <!-- Favicon -->
-    <link rel="shortcut icon" href="assets/img/favicon2.jpg" type="image/x-icon">
+    <link rel="shortcut icon" href="/assets/img/favicon2.jpg" type="image/x-icon">
     <!-- Remix Icon -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
     <!-- Swiper CSS -->
-    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="/assets/css/swiper-bundle.min.css">
     <!-- Custom Stylesheet -->
-    <link rel="stylesheet" href="assets/css/style-add-subject.css">
+    <link rel="stylesheet" href="/assets/css/style-add-subject.css">
 </head>
 
 <body>
@@ -67,9 +67,9 @@
         </nav>
     </header>
     <body2>
-        <div class="container__add">
-            <div class="title__add">Nhập Tài Liệu</div>
-            <form action="/posts/course/store" method="POST" enctype="multipart/form-data">
+        <form action="/posts/course/store" method="POST" enctype="multipart/form-data">
+            <div class="container__add">
+                <div class="title__add">Nhập Tài Liệu</div>
                 <div class="user__details">
                     <div class="input__box">
                         <span class="details">Tên tài liệu</span>
@@ -81,12 +81,13 @@
                     </div>
                     <div class="input__box">
                         <span class="details">Miêu tả</span>
-                        <textarea name="Description" rows="8" cols="76" placeholder="Nhập miêu tả tài liệu "></textarea>
+                        <textarea name="Description" rows="8" cols="86" placeholder="Nhập miêu tả tài liệu "></textarea>
                     </div>
                     <div class=" box2">
                         <span class="details">Hình</span>
                         <input type="file" name="image" required>
                     </div>
+                    <br />
                     <div class="box2">
                         <span class="details">Đường dẫn</span>
                         <input type="file" name="pdf" required>
@@ -95,9 +96,9 @@
                 <div class="button__add">
                     <button type="submit">Submit</button>
                 </div>
-            </form>
-        </div>
+            </div>
 
+        </form>
 
     </body2>
 
@@ -201,7 +202,7 @@
             <div class="login">
                 <div class="login__content">
                     <div class="login__img">
-                        <img src="assets/img/login3.png" alt="">
+                        <img src="/assets/img/login3.png" alt="">
                     </div>
 
                     <div class="login__forms">
@@ -288,15 +289,15 @@
         <i class="ri-arrow-up-line scrollup__icon"></i>
     </a>
     <!-- Scroll Reveal -->
-    <script src="assets/js/scrollreveal.min.js"></script>
+    <script src="/assets/js/scrollreveal.min.js"></script>
     <!-- Swiper JS -->
-    <script src="assets/js/swiper-bundle.min.js"></script>
+    <script src="/assets/js/swiper-bundle.min.js"></script>
 
     <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
      -->
     <!-- Main JS -->
-    <script src="assets/js/content-2.js"></script>
+    <script src="/assets/js/content-2.js"></script>
 </body>
 
 </html>

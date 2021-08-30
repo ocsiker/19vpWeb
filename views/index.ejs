@@ -48,7 +48,7 @@
                         <a href="#about" class="nav__link">Giới Thiệu</a>
                     </li>
                     <li class="nav__item">
-                        <a href="#about2" class="nav__link">Yêu thích nhất</a>
+                        <a href="/list-course" class="nav__link">Yêu thích nhất</a>
                     </li>
                     <% if(!loggedIn){%>
                     <li class="nav__item">
@@ -56,9 +56,10 @@
                     </li>
                     <%} else {%>
                     <li class="nav__item dropdown">
-                        <button class="nav__link btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="login__btn"><%=user.username%></button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                            <button action="/users/logout" class="dropdown-item" type="button">Đăng xuất</button>
+                        <div class="dropdown-menu">
+                            <form action="/users/logout" method="get" accept-charset="utf-8">
+                                <button class="dropdown-item" type="summit">Đăng xuất</button>
+                            </form>
                         </div>
                     </li>
                     <%}%>

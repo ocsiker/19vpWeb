@@ -11,12 +11,9 @@ module.exports = (req, res) => {
             bcrypt.compare(password, user.password, (err, same) => {
                 if (same)
                 {
-                    const listcourses = ListCourse.find({});
 
                     req.session.userId = user._id;
-                    res.render(
-                        'index',
-                        {"user" : "user", "listcourses" : "listcourses"});
+                    res.redirect('/');
                 }
                 else
                     res.redirect('/');

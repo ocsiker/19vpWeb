@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Realtime comment system</title>
+
+    <!-- StickyBit -->
+    <script src="./js/stickybits.min.js"></script>
+
+    <!-- CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+    <!-- Font CDN -->
+    <script src="https://kit.fontawesome.com/114ef145b3.js" crossorigin="anonymous"></script>
+
+    <!-- Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- Popper -->
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+
+    <!-- CloudFlare-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+
+    <!-- CDN 2-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="assets/img/favicon2.jpg" type="image/x-icon">
+
+    <!-- Remix Icon -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="./css/swiper-bundle.min.css">
+
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="./css/style-content.css">
+</head>
+
+<body>
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="index-homepage.html" class="nav__logo">Luyện Thi Online</a>
+            <!-- Menu Container -->
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="#home" class="nav__link active-link">Trang chủ</a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="#about" class="nav__link">Giới Thiệu</a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="#about2" class="nav__link">Yêu thích nhất</a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="./index-homepage.html" class="nav__link" id="login__btn">Đăng Nhập</a>
+                    </li>
+                </ul>
+
+                <div class="nav__dark">
+                    <!-- button -->
+                    <span class="change-theme-name"></span>
+                    <i class="ri-moon-line change-theme" id="theme-button"></i>
+                </div>
+                <i class="ri-close-line nav__close" id="nav-close"></i>
+            </div>
+
+            <div class="nav__toggle" id="nav-toggle">
+                <i class="ri-function-line"></i>
+            </div>
+        </nav>
+    </header>
+
+    <div class="mothership">
+        <div class="container">
+            <div class="wrapper">
+                <section>
+                    <h1>3107 - 3</h1>
+                    <br>
+                    <a href="https://www.facebook.com/100016290884883/videos/427668841832055/" target="_blank">CLick here</a>
+                    <br>
+
+                    <p>
+                        Chỗ này nhét pdf nè
+                    </p>
+                    <br>
+                    <p>
+                        Chỉ là xa thôi mà, chẳng khi nào ta ngừng nghĩ đến nhau.
+                        Bao tháng năm vô tư hồn nhiên biết mấy
+                        Những chuyến xe ta đi cùng năm tháng ấy
+                        Giờ đây chỉ là những thước phim
+                    </p>
+                    <p>
+                        Phai mờ sâu vào những kỉ niệm
+                        Điều duy nhất bây giờ, còn nhớ chỉ là vài câu
+                        Xin lỗi vì những lời hứa, xin lỗi chẳng yêu được nữa
+                        Xin lỗi vì em chẳng thể đến bên cạnh anh mỗi khi trời đổ mưa
+                    </p>
+                    <p>
+                        Xin lỗi vì em đã đúng, xin lỗi vì anh đã sai
+                        Xin lỗi vì ta chẳng thể đi cùng nhau để bây giờ cách xa
+                        Vòng xe thứ nhất là đón đưa em qua từng điểm hẹn ngày đầu tiên
+                        Góc phố đèn mờ có ngọn đèn cũ thổi hồn nỗi buồn này vào tim
+                    </p>
+                    <p>
+                        Vòng xe thứ hai là cùng với em đón nắng ngày xuân vào chiều tà
+                        Là thèm được nhớ nhưng rồi phải buông với họ gọi đó là yêu xa
+                        Em đâu hay biết, vẫn có người đứng chờ đợi em tới giữa khuya
+                        Chỉ để quan tâm em dẫu biết rằng em đang bận lòng với nửa kia
+                    </p>
+                    <p>
+                        Cùng một góc nhìn nhưng cảm xúc bây giờ dần trở nên vô vị
+                        Đứng trên dốc tình chỉ là mỗi góc nhìn để thấy được em và đô thị
+                        Ở trong thành phố, lòng đành cố gào thét khiến cổ họng khát khô
+                        Bây giờ là một giờ sáng, cafe đậm hòa cùng gói Bastos
+                    </p>
+                    <p>
+                        Anh từng sống trong tim em, quá thời hạn nhưng rồi phải ra đi
+                        Thành phố hồi đó có trời gió và em còn hơn cả Paris
+                        “Anh cũng chỉ nghĩ về những thứ mơ mộng thôi
+                    </p>
+                    <p>
+                        Dẫu biết thực tế khác xa vời vợi rồi
+                        Cũng chả rõ mình đã nhớ em về bao nhiêu đêm
+                        Nhưng mà ít nhiều gì thì anh cũng đã từng là một người rất yêu em”
+                    </p>
+                </section>
+
+                <aside>
+                    <div class="signup">
+                        <h2>Thank you for listening 💕</h2>
+                        <p>
+                            Don't for get to like and share （づ￣3￣）づ╭❤️～
+                        </p>
+                    </div>
+            </div>
+            </aside>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <h4><strong>Leave suggestion for the next song (✿◡‿◡)</strong></h4>
+                <p>I'll make sure to reply and cover your suggestion.</p>
+            </div>
+        </div>
+        <div class="row mb-4">
+            <div class="col-md-12">
+                <h4 class="border-bottom pb-2">Comments</h4>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="">Write a comment</label>
+                    <textarea id="textarea" rows="3" class="form-control"></textarea>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <button id="submitBtn" class="btn btn-primary float-right comment__button">Post comment</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="typing text-success"></div>
+                <ul class="comment__box">
+                    <!-- Lock from here -->
+                    <!-- <li class="comment">
+							<div class="card border-light mb-3">
+								<div class="card-body">
+									<h6>Mint</h6>
+									<p>Hay quá anh ơi! Bis bis ( •̀ ω •́ )✧</p>
+									<div>
+										<img src="./img/clock.png" alt="clock">
+										<small>10:30 PM</small>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="comment">
+							<div class="card border-light mb-3">
+								<div class="card-body">
+									<h6>Blue Corn</h6>
+									<p>Cover bài Đường Tôi Chở Em Về i Thông ui (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧!</p>
+									<div>
+										<img src="./img/clock.png" alt="clock">
+										<small>12:30 PM</small>
+									</div>
+								</div>
+							</div>
+						</li>
+						-->
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Subcribe Container -->
+    <section class="subcribe section" id="subcribe">
+        <div class="subcribe__bg">
+            <div class="subcribe__container container">
+                <h2 class="section__title subcribe__title">
+                    Đăng ký ngay
+                </h2>
+                <p class="subcribe__description">Hãy để chúng tôi cung cấp cho bạn thông tin về những khóa học mới nhất.</p>
+
+                <form action="" class="subcribe__form">
+                    <input type="text" placeholder="Nhập Gmail ở đây" class="subcribe__input">
+                    <button class="button subcribe__button">
+                        Đăng ký
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Container -->
+    <footer class="footer section">
+        <div class="footer__container container grid">
+            <div class="footer__content grid">
+                <div class="footer__data">
+                    <h3 class="footer__title">Luyện Thi Online</h3>
+                    <p class="footer__description">
+                        Thầy giáo: Nguyễn Phạm Dung Minh
+                        <br>Địa chỉ: Tầng 5 Tòa nhà I. Số 227 Nguyễn Văn Cừ Phường 4 Quận 5, Hồ Chí Minh
+                        <br>Điện thoại: 0123696969
+                        <br>Email: thaygiaovippro@gmail.com
+                        <br>Chịu trách nhiệm nội dung: Phạm Minh Thông Dung
+                    </p>
+
+                    <div>
+                        <a href="https://www.facebook.com/gia.minh.543908/" target="_blank" class="footer__social">
+                            <i class="ri-facebook-fill"></i>
+                        </a>
+                        <a href="https://www.instagram.com/gia.minnn/" target="_blank" class="footer__social">
+                            <i class="ri-instagram-fill"></i>
+                        </a>
+                        <a href="https://twitter.com/" target="_blank" class="footer__social">
+                            <i class="ri-twitter-fill"></i>
+                        </a>
+                        <a href="https://join.slack.com/t/skycitadel/shared_invite/zt-tp4xp5t3-QnJWMY1amNDeNKp7cuiTKQ" target="_blank" class="footer__social">
+                            <i class="ri-slack-fill"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer__data">
+                    <h3 class="footer__subtitle">Liên hệ quảng cáo</h3>
+
+                    <p class="footer__description ">
+                    <p>Đường dây nóng: 0123999999</p>
+                    <br>
+                    <p>Email: luyenthionline@admin.com </p><br>
+                    <a href="https://www.facebook.com/gia.minh.543908/" class="button">
+                        <i class="fab fa-facebook-messenger"></i>
+                        <svg class="button__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+                        </svg>
+                        Chat với tư vấn viên
+                    </a>
+
+                    </p>
+                </div>
+
+                <div class="footer__data">
+                    <h3 class="footer__subtitle">Hỗ trợ người dùng</h3>
+
+                    <ul>
+                        <li class="footer__item">
+                            <a href="" class="footer__link">Câu hỏi thường gặp</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="" class="footer__link">Cách thức thanh toán</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="" class="footer__link">Khiếu nại</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer__rights">
+                <p class="footer__copy">Copyright &#169; TeamMTTT. All rights reserved.</p>
+                <div class="footer__terms">
+                    <a href="#" class="footer__term-link2">Terms & Agreements</a>
+                    <a href="#" class="footer__term-link2">Privacy Policy</a>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Log in - Sign up -->
+    <div class="bg__modal">
+        <div class="modal__content">
+            <div class="close__btn">+</div>
+            <div class="login">
+                <div class="login__content">
+                    <div class="login__img">
+                        <img src="assets/img/login3.png" alt="">
+                    </div>
+
+                    <div class="login__forms">
+                        <form action="" class="login__registre" id="login-in">
+                            <h1 class="login__title">Đăng Nhập</h1>
+
+                            <div class="login__box">
+                                <i class='bx bx-user login__icon'></i>
+                                <input type="text" placeholder="Tài khoản" class="login__input">
+                            </div>
+
+                            <div class="login__box">
+                                <i class='bx bx-lock-alt login__icon'></i>
+                                <input type="password" placeholder="Mật khẩu" class="login__input">
+                            </div>
+
+                            <a href="#" class="login__forgot">Quên mật khẩu ?</a>
+
+                            <button href="#" class="login__button">Đăng Nhập</button>
+
+                            <div>
+                                <span class="login__account">Bạn chưa có tài khoản ?</span>
+                                <span class="login__signin" id="sign-up">Đăng Ký</span>
+                            </div>
+                        </form>
+
+                        <form action="" class="login__create none" id="login-up">
+                            <h1 class="login__title">Đăng Ký</h1>
+
+                            <div class="login__box">
+                                <i class='bx bx-user login__icon'></i>
+                                <input type="text" placeholder="Tài khoản" class="login__input">
+                            </div>
+
+                            <div class="login__box">
+                                <i class='bx bx-at login__icon'></i>
+                                <input type="email" placeholder="Gmail" class="login__input">
+                            </div>
+
+                            <div class="login__box">
+                                <i class='bx bx-lock-alt login__icon'></i>
+                                <input type="password" placeholder="Mật khẩu" class="login__input">
+                            </div>
+
+                            <div class="login__box">
+                                <i class='bx bx-lock-alt login__icon'></i>
+                                <input type="password" placeholder="Nhập lại mật khẩu" class="login__input">
+                            </div>
+
+                            <button class="login__button">Đăng Ký Ngay</button>
+
+                            <div>
+                                <span class="login__account">Bạn đã có tài khoản ?</span>
+                                <span class="login__signup" id="sign-in">Đăng Nhập</span>
+                            </div>
+
+                            <div class="login__social">
+                                <a href="https://www.facebook.com/gia.minh.543908/" target="_blank" class="login__social-icon">
+                                    <i class="ri-facebook-box-fill"></i>
+                                </a>
+
+                                <a href="https://www.instagram.com/gia.minnn/" target="_blank" class="login__social-icon">
+                                    <i class="ri-instagram-fill"></i>
+                                </a>
+
+                                <a href="https://twitter.com/" target="_blank" class="login__social-icon">
+                                    <i class="ri-twitter-fill"></i>
+                                </a>
+
+                                <a href="https://join.slack.com/t/skycitadel/shared_invite/zt-tp4xp5t3-QnJWMY1amNDeNKp7cuiTKQ" target="_blank" class="login__social-icon">
+                                    <i class="ri-slack-fill"></i>
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll up -->
+    <a href="#" class="scrollup" id="scroll-up">
+        <i class="ri-arrow-up-line scrollup__icon"></i>
+    </a>
+    <!-- Scroll Reveal -->
+    <script src="./js/scrollreveal.min.js"></script>
+    <!-- Swiper JS -->
+    <script src="./js/swiper-bundle.min.js"></script>
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
+		 -->
+    <!-- Main JS -->
+    <script src="./js/content.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.25.3/moment.min.js"></script>
+    <script src="/js/app.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>

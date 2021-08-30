@@ -2,33 +2,43 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luyện Thi Online</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Realtime comment system</title>
+
+    <!-- StickyBit -->
+    <script src="/assets/js/stickybits.min.js"></script>
+
     <!-- CDN -->
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" 
-    rel="stylesheet" 
-    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" 
-    crossorigin="anonymous"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
     <!-- Font CDN -->
     <script src="https://kit.fontawesome.com/114ef145b3.js" crossorigin="anonymous"></script>
+
     <!-- Jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
     <!-- Popper -->
     <script src="https://unpkg.com/@popperjs/core@2"></script>
+
     <!-- CloudFlare-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+
     <!-- CDN 2-->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
     <!-- Favicon -->
-    <link rel="shortcut icon" href="assets/img/favicon2.jpg" type="image/x-icon">
+    <link rel="shortcut icon" href="/assets/img/favicon2.jpg" type="image/x-icon">
+
     <!-- Remix Icon -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
     <!-- Swiper CSS -->
-    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="./css/swiper-bundle.min.css">
+
     <!-- Custom Stylesheet -->
-    <link rel="stylesheet" href="assets/css/style-content-2.css">
+    <link rel="stylesheet" href="/assets/css/style-content.css">
 </head>
 
 <body>
@@ -41,15 +51,17 @@
                     <li class="nav__item">
                         <a href="#home" class="nav__link active-link">Trang chủ</a>
                     </li>
+
                     <li class="nav__item">
                         <a href="#about" class="nav__link">Giới Thiệu</a>
                     </li>
+
                     <li class="nav__item">
                         <a href="#about2" class="nav__link">Yêu thích nhất</a>
                     </li>
+
                     <li class="nav__item">
-                        <a href="./index-homepage.html" class="nav__link">Đăng Nhập</a>
-                        <!-- id="login__btn" -->
+                        <a href="./index-homepage.html" class="nav__link" id="login__btn">Đăng Nhập</a>
                     </li>
                 </ul>
 
@@ -67,20 +79,95 @@
         </nav>
     </header>
 
-    <h2 style="text-align:center"><%=detailcourse.name%></h2>
-    <div style="text-align:center">
-        <p>
-            <%=detailcourse.Description%>
-        </p>
+
+    <div class="mothership">
+
+        <div class="container">
+            <div class="wrapper">
+                <section>
+
+                    <h2 style="text-align:center"><%=detailcourse.name%></h2>
+                    <div style="text-align:center">
+                        <p>
+                            <%=detailcourse.Description%>
+                        </p>
+                    </div>
+                    <div style="text-align:center">
+                        <object type="application/pdf" data="<%=detailcourse.pdf%>#toolbar=0" width="100%" height="500px">
+                        </object>
+                    </div>
+
+                </section>
+
+                <aside>
+                    <div class="signup">
+                        <h2>Thank you for listening 💕</h2>
+                        <p>
+                            Don't for get to like and share （づ￣3￣）づ╭❤️～
+                        </p>
+                    </div>
+            </div>
+            </aside>
+        </div>
+
     </div>
-    <div style="text-align:center">
-        <img src="<%=detailcourse.image%>" alt="<%=detailcourse.name%>" width="50%" height="50px">
+
+    <div class="container">
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <h4><strong>Leave suggestion for the next song (✿◡‿◡)</strong></h4>
+                <p>I'll make sure to reply and cover your suggestion.</p>
+            </div>
+        </div>
+        <div class="row mb-4">
+            <div class="col-md-12">
+                <h4 class="border-bottom pb-2">Comments</h4>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="">Write a comment</label>
+                    <textarea id="textarea" rows="3" class="form-control"></textarea>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <button id="submitBtn" class="btn btn-primary float-right comment__button">Post comment</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="typing text-success"></div>
+                <ul class="comment__box">
+                    <!-- Lock from here -->
+                    <!-- <li class="comment">
+							<div class="card border-light mb-3">
+								<div class="card-body">
+									<h6>Mint</h6>
+									<p>Hay quá anh ơi! Bis bis ( •̀ ω •́ )✧</p>
+									<div>
+										<img src="./img/clock.png" alt="clock">
+										<small>10:30 PM</small>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="comment">
+							<div class="card border-light mb-3">
+								<div class="card-body">
+									<h6>Blue Corn</h6>
+									<p>Cover bài Đường Tôi Chở Em Về i Thông ui (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧!</p>
+									<div>
+										<img src="./img/clock.png" alt="clock">
+										<small>12:30 PM</small>
+									</div>
+								</div>
+							</div>
+						</li>
+						-->
+                </ul>
+            </div>
+        </div>
     </div>
-    <br />
-    <div style="text-align:center">
-        <object type="application/pdf" data="<%=detailcourse.pdf%>#toolbar=0" width="50%" height="500px">
-        </object>
-    </div>
+
     <!-- Subcribe Container -->
     <section class="subcribe section" id="subcribe">
         <div class="subcribe__bg">
@@ -174,6 +261,7 @@
             </div>
         </div>
     </footer>
+
     <!-- Log in - Sign up -->
     <div class="bg__modal">
         <div class="modal__content">
@@ -181,7 +269,7 @@
             <div class="login">
                 <div class="login__content">
                     <div class="login__img">
-                        <img src="assets/img/login3.png" alt="">
+                        <img src="/assets/img/login3.png" alt="">
                     </div>
 
                     <div class="login__forms">
@@ -262,21 +350,24 @@
         </div>
     </div>
 
-
     <!-- Scroll up -->
     <a href="#" class="scrollup" id="scroll-up">
         <i class="ri-arrow-up-line scrollup__icon"></i>
     </a>
     <!-- Scroll Reveal -->
-    <script src="assets/js/scrollreveal.min.js"></script>
+    <script src="/assets/js/scrollreveal.min.js"></script>
     <!-- Swiper JS -->
-    <script src="assets/js/swiper-bundle.min.js"></script>
+    <script src="/assets/js/swiper-bundle.min.js"></script>
 
     <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
-     -->
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
+		 -->
     <!-- Main JS -->
-    <script src="assets/js/content-2.js"></script>
+    <script src="/assets/js/content.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.25.3/moment.min.js"></script>
+    <script src="/assets/js/app.js"></script>
+    <script src="/assets/js/main.js"></script>
 </body>
 
 </html>
