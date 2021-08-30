@@ -22,13 +22,13 @@
     <!-- CDN 2-->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <!-- Favicon -->
-    <link rel="shortcut icon" href="assets/img/favicon2.jpg" type="image/x-icon">
+    <link rel="shortcut icon" href="/assets/img/favicon2.jpg" type="image/x-icon">
     <!-- Remix Icon -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
     <!-- Swiper CSS -->
-    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="/assets/css/swiper-bundle.min.css">
     <!-- Custom Stylesheet -->
-    <link rel="stylesheet" href="assets/css/style-content-1.css">
+    <link rel="stylesheet" href="/assets/css/style-content-1.css">
 </head>
 
 <body>
@@ -75,7 +75,7 @@
             <a href="/list-course/math">
                 <article class="article__card">
                     <div class="article__image">
-                        <img src="./assets/img/toan1.jpg" alt="" />
+                        <img src="/assets/img/toan1.jpg" alt="" />
                     </div>
 
                     <div class="article__content">
@@ -84,36 +84,63 @@
                         <span class="card__excerpt">Đề bộ giáo dục</span>
                     </div>
                 </article>
+            </a>
 
-                <!-- Card 2 -->
+            <!-- Card 2 -->
+            <a href="/list-course/literature">
                 <article class="article__card">
                     <div class="article__image">
-                        <img src="./assets/img/van1.png" alt="" />
+                        <img src="/assets/img/van1.png" alt="" />
                     </div>
 
                     <div class="article__content">
-                        <a href="./index-content-1-5.html" class="card__category">Văn là dễ</a>
-                        <a href="./index-content-1-5.html" class="card__title">Văn</a><br>
-                        <a href="./index-content-1-5.html" class="card__excerpt">Đề bộ giáo dục</a>
+                        <span class="card__category">Văn là dễ</span>
+                        <span class="card__title">Văn</span><br>
+                        <span class="card__excerpt">Đề bộ giáo dục</span>
                     </div>
-                </article>
 
-                <!-- Card 3 -->
+                </article>
+            </a>
+
+            <!-- Card 3 -->
+            <a href="/list-course/language">
                 <article class="article__card">
                     <figure class="article__image">
-                        <img src="./assets/img/anh1.jpg" alt="" />
+                        <img src="/assets/img/anh1.jpg" alt="" />
                     </figure>
 
                     <div class="article__content">
-                        <a href="./index-content-1-5.html" class="card__category">Anh là dễ</a>
-                        <a href="./index-content-1-5.html" class="card__title">Anh</a><br>
-                        <a href="./index-content-1-5.html" class="card__excerpt">Đề bộ giáo dục</a>
+                        <span class="card__category">Anh là dễ</span>
+                        <span class="card__title">Anh</span><br>
+                        <span class="card__excerpt">Đề bộ giáo dục</span>
                     </div>
                 </article>
+            </a>
         </div>
     </div>
 
-    <aside></aside>
+    <div class="site__container">
+        <div class="article__container">
+
+            <%for(var i =listcourses.length-1;i>=0;i--){%>
+            <a href="/detail/<%=listcourses[i]._id %>">
+                <article class="article__card">
+                    <div class="article__image">
+                        <img src="<%=listcourses[i].image%>" alt="" />
+                    </div>
+                    <div class="article__content">
+                        <span class="card__category">
+                            <%=listcourses[i].course %>
+                        </span>
+
+                        <span class="card__title"> <%=listcourses[i].name %> </span><br>
+                        <span class="card__excerpt"> <%=listcourses[i].Description %> </span>
+                    </div>
+                </article>
+            </a>
+            <%}%>
+            </div>
+  </div>
 
 
 
@@ -222,7 +249,7 @@
             <div class="login">
                 <div class="login__content">
                     <div class="login__img">
-                        <img src="assets/img/login3.png" alt="">
+                        <img src="/assets/img/login3.png" alt="">
                     </div>
 
                     <div class="login__forms">
@@ -309,15 +336,15 @@
         <i class="ri-arrow-up-line scrollup__icon"></i>
     </a>
     <!-- Scroll Reveal -->
-    <script src="assets/js/scrollreveal.min.js"></script>
+    <script src="/assets/js/scrollreveal.min.js"></script>
     <!-- Swiper JS -->
-    <script src="assets/js/swiper-bundle.min.js"></script>
+    <script src="/assets/js/swiper-bundle.min.js"></script>
 
     <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
      -->
     <!-- Main JS -->
-    <script src="assets/js/content-2.js"></script>
+    <script src="/assets/js/content-2.js"></script>
 </body>
 
 </html>

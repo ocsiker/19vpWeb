@@ -50,8 +50,9 @@ app.get('/content', (req, res) => {
     res.render('content');
 });
 
-app.get('/content-1', (req, res) => {
-    res.render('content-1');
+app.get('/content-1', async (req, res) => {
+    const listcourses = await ListCourse.find({});
+    res.render('content-1', {listcourses});
 });
 app.get('/list-course', async (req, res) => {
     const listcourses = await ListCourse.find({});
