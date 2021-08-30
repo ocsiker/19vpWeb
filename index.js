@@ -46,9 +46,9 @@ app.get('/', async (req, res) => {
     res.render('index', {listcourses});
 });
 
-app.get('/content', (req, res) => {
-    res.render('content');
-});
+// app.get('/content', (req, res) => {
+//   res.render('content');
+//});
 
 app.get('/content-1', async (req, res) => {
     const listcourses = await ListCourse.find({});
