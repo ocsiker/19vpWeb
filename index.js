@@ -1,19 +1,19 @@
-const express        = require('express');
-const path           = require('path');
-const mongoose       = require('mongoose');
-const ejs            = require('ejs');
-const bodyParser     = require('body-parser');
-const ListCourse     = require('./models/listCourse');
-const fileUpload     = require('express-fileupload');
-const ListUser       = require('./models/listUser');
-const expressSession = require('express-session');
-const Comment        = require('./models/comment');
-
+const express            = require('express');
+const path               = require('path');
+const mongoose           = require('mongoose');
+const ejs                = require('ejs');
+const bodyParser         = require('body-parser');
+const ListCourse         = require('./models/listCourse');
+const fileUpload         = require('express-fileupload');
+const ListUser           = require('./models/listUser');
+const expressSession     = require('express-session');
+const flash              = require('connect-flash');
 const validateMiddleware = require('./middleware/validationMiddleware');
 const redirectIfAuthenticateMiddleware =
     require('./middleware/redirectIfAuthenticatedMiddleware');
-const authMiddleware = require('./middleware/authMiddleware');
-
+const authMiddleware     = require('./middleware/authMiddleware');
+const passwordValidation = require('./middleware/passwordValidation');
+const Comment            = require('./models/comment');
 // for login
 
 const bcrypt = require('bcrypt');
@@ -25,7 +25,9 @@ mongoose.connect('mongodb://localhost/Courses', {
     useFindAndModify : true
 });
 
-var app = express();
+var app    = express();
+var server = require('http').createServer(app);
+var io     = require('socket.io')(server);
 
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
@@ -33,6 +35,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended : true}));
 app.use(fileUpload());
 app.use(expressSession({secret : 'keyboard cat'}));
+app.use(flash());
 
 global.loggedIn = null;
 
@@ -43,7 +46,9 @@ app.use("*", (req, res, next) => {
 app.get('/', async (req, res) => {
     //    res.sendFile(path.resolve('JSAV.pdf'));
     const listcourses = await ListCourse.find({});
-    res.render('index', {listcourses});
+    res.render(
+        'index',
+        {listcourses : listcourses, errors : req.session.validationErrors});
 });
 
 // app.get('/content', (req, res) => {
@@ -62,8 +67,7 @@ app.get('/list-course', async (req, res) => {
 /*
 app.get('/list-course', async (req, res) => {
     const listcourses = await ListCourse.find({});
-    res.render('listCourse', {listcourses});
-})
+    res.render('listCourse', {listcourses}); })
 */
 const detailCourseController = require('./controllers/detailCourse');
 app.get('/detail/:id', detailCourseController);
@@ -183,9 +187,6 @@ app.post('/api/Courses', (req, res) => {
                 res.send(comments)
             })})
 
-    const server = app.listen(`${port}`);
-    let io       = require('socket.io')(server)
-
 io.on('connection', (socket) => {
     console.log(`New connection: ${socket.id}`)
 // Recieve event
@@ -198,3 +199,4 @@ io.on('connection', (socket) => {
         socket.broadcast.emit('typing', data) 
     })
 })
+    server.listen(3000);

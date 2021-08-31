@@ -1,35 +1,32 @@
-let username
-let socket = io()
-do
-{
-    username = prompt('Enter your name: ')
-}
-while (!username)
+let socket   = io()
+let username = "thong"
+// let username = tempuser.username;
+// console.log(usernam / e);
 
-    const textarea   = document.querySelector('#textarea')
-    const submitBtn  = document.querySelector('#submitBtn')
-    const commentBox = document.querySelector('.comment__box')
+const textarea   = document.querySelector('#textarea')
+const submitBtn  = document.querySelector('#submitBtn')
+const commentBox = document.querySelector('.comment__box')
 
-    submitBtn.addEventListener('click', (e) => {
-        e.preventDefault()
-        let comment = textarea.value
-        if (!comment)
-        {
-            return
-        }
-        postComment(comment)
-    })
-
-    function postComment(comment)
+submitBtn.addEventListener('click', (e) => {
+    e.preventDefault()
+    let comment = textarea.value
+    if (!comment)
     {
-        // Append to dom
-        let data = {username : username, comment : comment} appendToDom(data)
-        textarea.value = ''
-        // Broadcast
-        broadcastComment(data)
-        // Sync with Mongo Db
-        syncWithDb(data)
+        return
     }
+    postComment(comment)
+})
+
+function postComment(comment)
+{
+    // Append to dom
+    let data       = {username : username, comment : comment} appendToDom(data)
+    textarea.value = ''
+    // Broadcast
+    broadcastComment(data)
+    // Sync with Mongo Db
+    syncWithDb(data)
+}
 
 function appendToDom(data)
 {

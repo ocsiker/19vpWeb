@@ -34,7 +34,7 @@
 <body>
     <header class="header" id="header">
         <nav class="nav container">
-            <a href="index-homepage.html" class="nav__logo">Luyện Thi Online</a>
+            <a href="#" class="nav__logo">Luyện Thi Online</a>
             <!-- Menu Container -->
             <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list">
@@ -45,12 +45,21 @@
                         <a href="#about" class="nav__link">Giới Thiệu</a>
                     </li>
                     <li class="nav__item">
-                        <a href="./index-content-1.html" class="nav__link">Bài Học</a>
+                        <a href="/content-1" class="nav__link">Yêu thích nhất</a>
                     </li>
+                    <% if(!loggedIn){%>
                     <li class="nav__item">
-                        <a href="./index-homepage.html" class="nav__link">Đăng Nhập</a>
-                        <!-- id="login__btn" -->
+                        <a href="#" class="nav__link" id="login__btn">Đăng nhập</a>
                     </li>
+                    <%} else {%>
+                    <li class="nav__item dropdown">
+                        <div class="dropdown-menu">
+                            <form action="/users/logout" method="get" accept-charset="utf-8">
+                                <button class="dropdown-item" type="summit">Đăng xuất</button>
+                            </form>
+                        </div>
+                    </li>
+                    <%}%>
                 </ul>
 
                 <div class="nav__dark">
@@ -65,6 +74,9 @@
                 <i class="ri-function-line"></i>
             </div>
         </nav>
+    
+
+    
     </header>
 
     <!-- Card Container -->
@@ -72,22 +84,22 @@
         <div class="article__container">
 
             <%for(var i =listcourses.length-1;i>=0;i--){%>
-            <a href="/detail/<%=listcourses[i]._id %>">
-                <article class="article__card">
-                    <div class="article__image">
-                        <img src="<%=listcourses[i].image%>" alt="" />
-                    </div>
-                    <div class="article__content">
-                        <span class="card__category">
-                            <%=listcourses[i].course %>
-                        </span>
+                    <a href="/detail/<%=listcourses[i]._id %>">
+                        <article class="article__card">
+                            <div class="article__image">
+                                <img src="<%=listcourses[i].image%>" alt="" />
+                            </div>
+                            <div class="article__content">
+                                <span class="card__category">
+                                    <%=listcourses[i].course %>
+                                </span>
 
-                        <span class="card__title"> <%=listcourses[i].name %> </span><br>
-                        <span class="card__excerpt"> <%=listcourses[i].Description %> </span>
-                    </div>
-                </article>
-            </a>
-            <%}%>
+                                <span class="card__title"> <%=listcourses[i].name %> </span><br>
+                                <span class="card__excerpt"> <%=listcourses[i].Description %> </span>
+                            </div>
+                        </article>
+                    </a>
+                    <%}%>
             </div>
   </div>
 

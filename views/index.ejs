@@ -48,7 +48,7 @@
                         <a href="#about" class="nav__link">Giới Thiệu</a>
                     </li>
                     <li class="nav__item">
-                        <a href="/list-course" class="nav__link">Yêu thích nhất</a>
+                        <a href="/content-1" class="nav__link">Yêu thích nhất</a>
                     </li>
                     <% if(!loggedIn){%>
                     <li class="nav__item">
@@ -198,7 +198,6 @@
                         <input type="email" placeholder="Nhập Gmail ở đây" class="subcribe__input">
                         <button class="button subcribe__button">
                             Đăng ký
-                            <span class="about2__description">92 thành viên đã xem</span>
                         </button>
                     </form>
                 </div>
@@ -290,30 +289,39 @@
                         <img src="assets/img/login3.png" alt="">
                     </div>
                     <!-- 301-322 form login -->
-                    <div class="login__forms">
-                        <form action="/users/login" method="POST" class="login__registre" id="login-in">
-                            <h1 class="login__title">Đăng Nhập</h1>
+                        <div class="login__forms">
+                            <form action="/users/login" method="POST" class="login__registre" id="login-in">
+                                <h1 class="login__title">Đăng Nhập</h1>
 
-                            <div class="login__box">
-                                <i class='bx bx-user login__icon'></i>
-                                <input type="text" placeholder="Tài khoản" class="login__input" name="username">
-                            </div>
+                                <div class="login__box">
+                                    <i class='bx bx-user login__icon'></i>
+                                    <input type="text" placeholder="Tài khoản" class="login__input" name="username">
+                                </div>
 
-                            <div class="login__box">
-                                <i class='bx bx-lock-alt login__icon'></i>
-                                <input type="password" placeholder="Mật khẩu" class="login__input" name="password">
-                            </div>
+                                <div class="login__box">
+                                    <i class='bx bx-lock-alt login__icon'></i>
+                                    <input type="password" placeholder="Mật khẩu" class="login__input" name="password">
+                                </div>
 
-                            <a href="#" class="login__forgot">Quên mật khẩu ?</a>
-                         <button type="submit" class="login__button"> Đăng Nhập </button>
-        
-                            <div>
-                                <span class="login__account">Bạn chưa có tài khoản ?</span>
-                                <span class="login__signin" id="sign-up">Đăng Ký</span>
-                            </div>
-                        </form>
+                                <a href="#" class="login__forgot">Quên mật khẩu ?</a>
+                                <button type="submit" class="login__button"> Đăng Nhập </button>
+
+                                <div>
+                                    <span class="login__account">Bạn chưa có tài khoản ?</span>
+                                    <span class="login__signin" id="sign-up">Đăng Ký</span>
+                                </div>
+                            </form>
+                            <!-- validation errors register -->
+
+                    <% if(errors!=null && errors.length>0){%>
+                    <ul class="list-group">
+                        <%for(var i =0;i<errors.length;i++){%>
+                        <li class="list-group-item list-group-item-danger"><%=errors[i]%></li>
+                        <%}%>
+                    </ul>
+                        <%}%>
                         <!-- 324-352 form register -->
-    <form action="/users/register" method="POST" class="login__create none" accept-charset="utf-8"id="login-up" >
+                        <form action="/users/register" method="POST" class="login__create none" accept-charset="utf-8" id="login-up">
                             <h1 class="login__title">Đăng Ký</h1>
 
                             <div class="login__box">
@@ -336,7 +344,7 @@
                                 <input type="password" placeholder="Nhập lại mật khẩu" class="login__input" name="repassword">
                             </div>
 
-        <button type="submit" class="login__button"> Đăng Ký Ngay </button>
+                            <button type="submit" class="login__button"> Đăng Ký Ngay </button>
 
                             <div>
                                 <span class="login__account">Bạn đã có tài khoản ?</span>
@@ -362,25 +370,25 @@
                                 </a>
                             </div>
                         </form>
-                    </div>
-                </div>
             </div>
-        </div>
-    </div>
-    <!-- Scroll up -->
-    <a href="#" class="scrollup" id="scroll-up">
-        <i class="ri-arrow-up-line scrollup__icon"></i>
-    </a>
-    <!-- Scroll Reveal -->
-    <script src="assets/js/scrollreveal.min.js"></script>
-    <!-- Swiper JS -->
-    <script src="assets/js/swiper-bundle.min.js"></script>
+            </div>
+            </div>
+            </div>
+            </div>
+            <!-- Scroll up -->
+            <a href="#" class="scrollup" id="scroll-up">
+                <i class="ri-arrow-up-line scrollup__icon"></i>
+            </a>
+            <!-- Scroll Reveal -->
+            <script src="assets/js/scrollreveal.min.js"></script>
+            <!-- Swiper JS -->
+            <script src="assets/js/swiper-bundle.min.js"></script>
 
-    <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
+            <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
      -->
-    <!-- Main JS -->
-    <script src="assets/js/homepage.js"></script>
+            <!-- Main JS -->
+            <script src="assets/js/homepage.js"></script>
 </body>
 
 </html>

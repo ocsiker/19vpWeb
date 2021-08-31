@@ -1,6 +1,7 @@
-const mongoose = require('mongoose');
-const Schema   = mongoose.Schema;
-const bcrypt   = require('bcrypt');
+const mongoose        = require('mongoose');
+const Schema          = mongoose.Schema;
+const uniqueValidator = require('mongoose-unique-validator');
+const bcrypt          = require('bcrypt');
 
 const UserSchema = new Schema({
     username : {type : String, required : true, unique : true},
@@ -9,6 +10,8 @@ const UserSchema = new Schema({
     repassword : {type : String, required : true}
 
 });
+
+UserSchema.plugin(uniqueValidator);
 
 UserSchema.pre('save', function(next) {
     const user = this;

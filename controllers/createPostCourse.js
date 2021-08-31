@@ -9,7 +9,9 @@ module.exports = async (req, res) => {
     await ListCourse.create({
         ...req.body,
         image : '/image/' + image.name,
-        pdf : '/pdf/' + pdf.name
+        pdf : '/pdf/' + pdf.name,
+        userid : req.session.userId
     });
+
     res.redirect('/up-list-course');
 };
